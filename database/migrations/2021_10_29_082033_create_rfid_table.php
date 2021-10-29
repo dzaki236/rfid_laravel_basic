@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMembersTable extends Migration
+class CreateRfidTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,9 @@ class CreateMembersTable extends Migration
      */
     public function up()
     {
-        Schema::create('members', function (Blueprint $table) {
+        Schema::create('rfid', function (Blueprint $table) {
             $table->id();
-            $table->string('id_member')->unique()->nullable();
-            $table->string('nama_lengkap');
-            $table->text('alamat');
-            $table->enum('jenis_kelamin',['L','P']);
+            $table->string('code',100)->unique()->nullable();
             $table->timestamps();
         });
     }
@@ -30,6 +27,6 @@ class CreateMembersTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('members');
+        Schema::dropIfExists('rfid');
     }
 }

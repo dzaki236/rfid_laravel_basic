@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\MemberController;
+use App\Http\Controllers\RfidController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -18,4 +19,6 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resource('/members',MemberController::class);
+// Route::resource('/members',MemberController::class);
+Route::resource('/rfid',RfidController::class);
+Route::post('/tambah_kode_rfid',[MemberController::class,'tambah_kode']);
