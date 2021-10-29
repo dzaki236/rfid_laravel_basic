@@ -75,7 +75,7 @@
                                 </div>
                             </div>
                             <p class="message-text text-center mt-2">Menunggu Beberapa Detik...</p>
-                            <input type="text" name="code" id="code">
+                            <input type="text" name="code" id="code" style="opacity: 0%">
                         </form>
                     </div>
 
